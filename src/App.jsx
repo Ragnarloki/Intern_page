@@ -20,9 +20,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         
-      <Route path='/Chart' element={<Chart/>}/>
          <Route path='/' element={<First_page/>}/>
-         <Route path='/Chart_without_line' element={<Chart_without_line/>}/>
          <Route path='/RegisterForm' element={<RegisterForm/>}/>
          <Route path='/HomePage' element={<HomePage/>}/>
          <Route path='/InternDetail' element={<InternDetail/>}/>

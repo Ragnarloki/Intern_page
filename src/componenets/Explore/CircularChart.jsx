@@ -19,6 +19,8 @@ const CircularChart = () => {
     completed: i < completedDays,
   }));
 
+ 
+
   const COLORS = [currentChart === 0 ? "#F5CF6B" : "#17212E", "#17212E"];
 
   const renderActiveShape = (props) => {
@@ -105,9 +107,9 @@ const CircularChart = () => {
     }
 
     // Navigate to day details if you want
-    if (selectedDay === 1) {
+  
       navigate(`/day/${selectedDay}`);
-    }
+    
   };
 
   return (

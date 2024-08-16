@@ -10,19 +10,80 @@ import DayUpload from './DayUpload';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+
+// const DayDetail1 = () => {
+//   const { day } = useParams();
+
+//   const content = {
+//     1: {
+//       title: "Day 1: Introduction to the Course",
+//       description: "Welcome to Day 1! Today we will cover the basics...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//       videos: ["Video 1", "Video 2"],
+//     },
+//     2: {
+//       title: "Day 2: Advanced Topics",
+//       description: "Welcome to Day 2! Today we will dive deeper...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//       videos: ["Video 3", "Video 4"],
+//     },
+//     // Add more days as needed
+//   };
+
+//   const dayContent = content[day] || {
+//     title: `Day ${day}: Content not available`,
+//     description: "No content available for this day.",
+//     videos: [],
+//   };
+
+//   return (
+//     <div className='bg-[#D4CAAA] h-full font-times'>
+//       <Header />
+//       <About />
+//       <div className="p-3 md:p-16">
+//         <h1 className="text-2xl md:text-4xl font-bold">{dayContent.title}</h1>
+//         <div className='grid grid-cols-1 md:grid-cols-2 mt-8'>
+//           <div>
+//             <h2 className="text-2xl md:text-4xl font-bold">Videos</h2>
+//             <div className='rounded-full'>
+//               <img className='p-10 rounded-[50px] h-full w-full' src={Video} alt="" />
+//             </div>
+//           </div>
+//           <div>
+//             <h2 className="text-2xl md:text-4xl font-bold">Description</h2>
+//             <p className='p-10 md:text-2xl'>{dayContent.description}</p>
+//           </div>
+//         </div>
+//       </div>
+//       <DayUpload />
+//     </div>
+//   );
+// };
+
+
 const DayDetail = () => {
   const { day } = useParams();
-
+ 
   // Dummy content for each day. Replace with actual content.
+  
+ 
   const content = {
-    "Day 1": {
+    1: {
+      title: "Day 1: Introduction to the Course",
+      description: "Welcome to Day 1! Today we will cover the basics...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       videos: ["Video 1", "Video 2"],
-      description: "Description for Day 1",
+    },
+    2: {
+      title: "Day 2: Advanced Topics",
+      description: "Welcome to Day 2! Today we will dive deeper...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      videos: ["Video 3", "Video 4"],
     },
     // Add more days as needed
   };
 
-  const dayContent = content[`Day ${day}`] || {};
+  const dayContent = content[day] || {
+    title: `Day ${day}: Content not available`,
+    description: "No content available for this day.",
+    videos: [],
+  };
 
   const Modal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
@@ -152,7 +213,7 @@ const DayDetail = () => {
         <About />
     <div className="p-3 md:p-16">
         <div>
-      <h1 className="text-2xl md:text-4xl font-bold ">Day {day}</h1>
+      <h1 className="text-2xl md:text-4xl font-bold ">{dayContent.title}</h1>
       {/* <p className="mt-4">{dayContent.description}</p> */}
       <div className='flex justify-evenly flex-wrap my-5 md:my-10'>
         <div className='flex justify-center '>   
@@ -181,7 +242,7 @@ const DayDetail = () => {
         </div>    
          <div >
             <h1 className='text-2xl md:text-4xl font-bold' >Description</h1>
-            <p className='p-10 md:text-2xl'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p className='p-10 md:text-2xl'>{dayContent.description}</p>
          </div>
       </div>
       {/* <ul className="mt-2">
