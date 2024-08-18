@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from "../../assets/images/logo.png"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
       <nav className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex  items-center">
-          <h1>{"<"} &nbsp; Back</h1>
+          <Link to={"/InternDetail"}><h1>{"<"} &nbsp; Back</h1></Link>
           </div>
           <div className="hidden md:block ">
             <div className=" flex justify-center font-times font-bold space-x-4">

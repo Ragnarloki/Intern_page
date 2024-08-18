@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from './Header';
 import { BsFillFileEarmarkTextFill } from "react-icons/bs"
 import About from './About';
 import { RiVideoFill } from "react-icons/ri";
@@ -9,55 +8,30 @@ import DayUpload from './DayUpload';
 
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import logo from "../../assets/images/logo.png"
+import { Link } from 'react-router-dom';
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
-// const DayDetail1 = () => {
-//   const { day } = useParams();
-
-//   const content = {
-//     1: {
-//       title: "Day 1: Introduction to the Course",
-//       description: "Welcome to Day 1! Today we will cover the basics...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//       videos: ["Video 1", "Video 2"],
-//     },
-//     2: {
-//       title: "Day 2: Advanced Topics",
-//       description: "Welcome to Day 2! Today we will dive deeper...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//       videos: ["Video 3", "Video 4"],
-//     },
-//     // Add more days as needed
-//   };
-
-//   const dayContent = content[day] || {
-//     title: `Day ${day}: Content not available`,
-//     description: "No content available for this day.",
-//     videos: [],
-//   };
-
-//   return (
-//     <div className='bg-[#D4CAAA] h-full font-times'>
-//       <Header />
-//       <About />
-//       <div className="p-3 md:p-16">
-//         <h1 className="text-2xl md:text-4xl font-bold">{dayContent.title}</h1>
-//         <div className='grid grid-cols-1 md:grid-cols-2 mt-8'>
-//           <div>
-//             <h2 className="text-2xl md:text-4xl font-bold">Videos</h2>
-//             <div className='rounded-full'>
-//               <img className='p-10 rounded-[50px] h-full w-full' src={Video} alt="" />
-//             </div>
-//           </div>
-//           <div>
-//             <h2 className="text-2xl md:text-4xl font-bold">Description</h2>
-//             <p className='p-10 md:text-2xl'>{dayContent.description}</p>
-//           </div>
-//         </div>
-//       </div>
-//       <DayUpload />
-//     </div>
-//   );
-// };
-
+  return (
+    <header className="bg-white font-times text-lg font-bold">
+      <nav className=" mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex  items-center">
+          <Link to={"/Explore"}><h1>{"<"} &nbsp; Back</h1></Link>
+          </div>
+          <div>
+          <img src={logo} alt="" className='h-16 '/>
+         </div>
+      </div>
+      </nav>
+    </header>
+  );
+};
 
 const DayDetail = () => {
   const { day } = useParams();

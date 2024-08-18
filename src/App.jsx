@@ -8,9 +8,7 @@ import First_page from './componenets/First_page';
 import DomainPage from './componenets/DomainPage/DomainPage';
 import CourseDetails from './componenets/CourseDetails/CourseDetails';
 import Explore from './componenets/Explore/Explore';
-import Chart from './componenets/Explore/Chart'
 import DayDetail from './componenets/Explore/DayDetail';
-import Chart_without_line from './componenets/Explore/Chart_without_line';
 
 function App() {
   

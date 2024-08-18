@@ -4,8 +4,8 @@ import Image from "../../assets/images/four_person.png"
 import { Link } from 'react-router-dom';
 const About = () => {
   return (
-
-    <div className="bg-gray-900 text-white  font-times flex justify-center   ">
+    <div>
+          <div className="bg-gray-900 text-white  font-times flex justify-center   ">
       {/* Search bar and buttons section */}
      <div className=''>
         <div className="md:flex p-10 justify-center w-full ">
@@ -39,6 +39,7 @@ const About = () => {
       
         </div>
       </div>
+    </div>
     </div>
   );
 };

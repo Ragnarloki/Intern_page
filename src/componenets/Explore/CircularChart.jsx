@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PieChart, Pie, Cell, Sector, ResponsiveContainer, Text } from 'recharts';
 import Upload from './Upload';
+import About from './About';
+import Header from './Header';
+
 const CircularChart = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("15 Days");
   const [currentChart, setCurrentChart] = useState(0);
@@ -113,7 +116,10 @@ const CircularChart = () => {
   };
 
   return (
-    <div className="flex flex-col items-center font-times justify-center bg-[#D4CAAA]">
+  <div>
+    <Header/>
+    <About />
+  <div className="flex flex-col items-center font-times justify-center bg-[#D4CAAA]">
       <div className="px-2 flex md:space-x-4 pt-10 md:text-xl font-bold mb-8">
         {periods.map((period) => (
           <button
@@ -217,7 +223,9 @@ const CircularChart = () => {
       )}
       <Upload value={selectedPeriod}/>
     </div>
-  );
+
+    </div>
+    );
 };
 
 export default CircularChart;
